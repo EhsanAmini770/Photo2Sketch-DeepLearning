@@ -152,18 +152,6 @@ wandb/
 !final_training_curves.png
 !training_metrics.json
 
-# Large image files
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.bmp
-*.tiff
-*.tif
-!sample_results/
-!docs/
-!README_images/
-!results/
 
 # Video files
 *.mp4
