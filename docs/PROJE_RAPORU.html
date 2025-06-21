@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotoğraftan Eskiz Oluşturma Projesi - Rapor</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .metric-card {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #3498db;
+        }
+        .metric-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .metric-label {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .tech-item {
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        .highlight {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .limitation {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            color: #7f8c8d;
+        }
+        .mermaid-container {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .mermaid {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FOTOĞRAFTAN ESKİZ OLUŞTURMA PROJESİ</h1>
+        <p style="text-align: center; font-size: 18px; color: #7f8c8d; margin-bottom: 30px;">
+            Derin Öğrenme ile Yüz Fotoğraflarından Sanatsal Eskiz Üretimi
+        </p>
+
+        <div class="section">
+            <h2>1. Proje Başlığı</h2>
+            <div class="highlight">
+                <strong>Derin Öğrenme Tabanlı Fotoğraf-Eskiz Dönüştürme Sistemi: GAN Mimarisi ile Yüz Fotoğraflarından Sanatsal Eskiz Üretimi</strong>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. Proje Ekibi</h2>
+            <ul>
+                <li><strong>Ad Soyad:</strong> Ehsan Amini</li>
+                <li><strong>Öğrenci Numarası:</strong> 9201118076</li>
+                <li><strong>Bölüm / Sınıf:</strong> yazılım mühendisliği</li>
+                <li><strong>Görevler:</strong> Proje Lideri, Model Geliştirme, Veri Analizi, Raporlama</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>3. Proje Özeti</h2>
+            <p>Bu proje, Generative Adversarial Networks (GAN) mimarisi kullanarak yüz fotoğraflarını sanatsal eskizlere dönüştüren bir derin öğrenme sistemi geliştirmiştir. Pix2Pix GAN modeli temel alınarak, ResNet-9 Generator ve PatchGAN Discriminator kullanılmıştır. CUFS (Chinese University Face Sketch) veri seti üzerinde 100 epoch boyunca eğitilen model, %61.4 generator loss iyileştirmesi ve %65.3 discriminator loss iyileştirmesi elde etmiştir. Sistem, gerçek zamanlı eskiz üretimi yapabilmekte ve yüksek kaliteli sanatsal çıktılar üretmektedir.</p>
+        </div>
+
+        <div class="section">
+            <h2>4. Giriş</h2>
+            
+            <h3>Projenin Konusu ve Amacı</h3>
+            <p>Bu projenin temel amacı, derin öğrenme teknikleri kullanarak yüz fotoğraflarını otomatik olarak sanatsal eskizlere dönüştüren bir sistem geliştirmektir. Proje, bilgisayarlı görü ve üretken yapay zeka alanlarında önemli bir uygulama olan image-to-image translation problemini ele almaktadır.</p>
+
+            <h3>Neden Bu Konuyu Seçtiniz?</h3>
+            <ul>
+                <li><strong>Sanatsal Değer:</strong> Dijital sanat ve yaratıcı AI alanında pratik uygulamalar</li>
+                <li><strong>Teknik Zorluk:</strong> GAN eğitimi ve image-to-image translation karmaşık problemler</li>
+                <li><strong>Pratik Kullanım:</strong> Portre çizimi, dijital sanat, sosyal medya uygulamaları</li>
+                <li><strong>Akademik Önem:</strong> Computer vision ve deep learning alanlarında güncel araştırma konusu</li>
+            </ul>
+
+            <h3>Çalışmanın Kapsamı ve Sınırlılıkları</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="highlight success">
+                    <h4>Kapsam:</h4>
+                    <ul>
+                        <li>Yüz fotoğraflarından eskiz üretimi</li>
+                        <li>GAN tabanlı model geliştirme</li>
+                        <li>Kapsamlı eğitim ve değerlendirme sistemi</li>
+                        <li>Gerçek zamanlı inference</li>
+                    </ul>
+                </div>
+                <div class="highlight limitation">
+                    <h4>Sınırlılıklar:</h4>
+                    <ul>
+                        <li>Sadece yüz fotoğrafları (CUFS veri seti)</li>
+                        <li>256x256 piksel çözünürlük</li>
+                        <li>Tek stil eskiz üretimi</li>
+                        <li>Sınırlı veri seti boyutu</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>5. Kullanılan Yöntem ve Teknolojiler</h2>
+            
+            <h3>Algoritmalar / Modeller</h3>
+            <div class="highlight">
+                <h4>Ana Mimari: Pix2Pix GAN</h4>
+                <ul>
+                    <li><strong>Generator:</strong> ResNet-9 tabanlı U-Net benzeri mimari
+                        <ul>
+                            <li>Encoder-Decoder yapısı</li>
+                            <li>Skip connections</li>
+                            <li>Instance Normalization</li>
+                            <li>9 ResNet bloğu</li>
+                        </ul>
+                    </li>
+                    <li><strong>Discriminator:</strong> PatchGAN (70x70)
+                        <ul>
+                            <li>Patch-level geçerlilik haritası çıktısı</li>
+                            <li>MSE Loss (LSGAN yaklaşımı)</li>
+                            <li>Convolutional layers</li>
+                            <li>LeakyReLU aktivasyon</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h3>Teknoloji Yığını</h3>
+            <div class="tech-stack">
+                <span class="tech-item">Python 3.8+</span>
+                <span class="tech-item">PyTorch 1.9+</span>
+                <span class="tech-item">PIL</span>
+                <span class="tech-item">OpenCV</span>
+                <span class="tech-item">NumPy</span>
+                <span class="tech-item">Matplotlib</span>
+                <span class="tech-item">Adam Optimizer</span>
+            </div>
+
+            <h3>Veri Seti: CUFS (Chinese University Face Sketch)</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">606</div>
+                    <div class="metric-label">Toplam Çift</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">485</div>
+                    <div class="metric-label">Eğitim Çifti</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">121</div>
+                    <div class="metric-label">Test Çifti</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">256x256</div>
+                    <div class="metric-label">Çözünürlük</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>6. Sonuçlar ve Değerlendirme</h2>
+            
+            <h3>Eğitim Performansı (100 Epoch)</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">61.4%</div>
+                    <div class="metric-label">Generator Loss İyileştirmesi</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">65.3%</div>
+                    <div class="metric-label">Discriminator Loss İyileştirmesi</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">0.74</div>
+                    <div class="metric-label">Toplam Eğitim Süresi (saat)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">26.8</div>
+                    <div class="metric-label">Epoch Başına Süre (saniye)</div>
+                </div>
+            </div>
+            <h3>Sistem Mimarisi Diyagramı</h3>
+            <div class="image-container">
+                <img src="workspace/diagram.png" alt="System Architecture Diagram" style="max-width: 800px;">
+                <p><em>Şekil 2: Detaylı Sistem Mimarisi Diyagramı</em></p>
+            </div>
+
+            <h3>Eğitim Performansı Analizi</h3>
+            <div class="image-container">
+                <img src="workspace/loss_analysis.png" alt="Loss Analysis" style="max-width: 800px;">
+                <p><em>Şekil 2: Generator ve Discriminator loss değerlerinin 100 epoch boyunca değişimi</em></p>
+            </div>
+
+            <h3>Eğitim Eğrileri (Detaylı)</h3>
+            <div class="image-container">
+                <img src="workspace/training_curves.png" alt="Training Curves" style="max-width: 800px;">
+                <p><em>Şekil 3: Detaylı eğitim eğrileri ve metrikler</em></p>
+            </div>
+
+            <h3>Örnek Sonuçlar</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin: 20px 0;">
+                <div class="image-container">
+                    <img src="workspace/sample_results/comparisons/1_comparison.png" alt="Sample 1" style="max-width: 100%;">
+                    <p><em>Örnek 1: Fotoğraf → Eskiz dönüşümü</em></p>
+                </div>
+                <div class="image-container">
+                    <img src="workspace/sample_results/comparisons/10_comparison.png" alt="Sample 2" style="max-width: 100%;">
+                    <p><em>Örnek 2: Fotoğraf → Eskiz dönüşümü</em></p>
+                </div>
+                <div class="image-container">
+                    <img src="workspace/sample_results/comparisons/100_comparison.png" alt="Sample 3" style="max-width: 100%;">
+                    <p><em>Örnek 3: Fotoğraf → Eskiz dönüşümü</em></p>
+                </div>
+            </div>
+
+            <h3>Eğitim Süreci Boyunca Kalite Gelişimi</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+                <div class="image-container">
+                    <img src="workspace/results/sketch_001_epoch18.png" alt="Epoch 18" style="max-width: 100%;">
+                    <p><em>Epoch 18</em></p>
+                </div>
+                <div class="image-container">
+                    <img src="workspace/results/sketch_001_epoch67.png" alt="Epoch 67" style="max-width: 100%;">
+                    <p><em>Epoch 67</em></p>
+                </div>
+                <div class="image-container">
+                    <img src="workspace/results/sketch_001_epoch90.png" alt="Epoch 90" style="max-width: 100%;">
+                    <p><em>Epoch 90</em></p>
+                </div>
+                <div class="image-container">
+                    <img src="workspace/results/sketch_001_epoch99.png" alt="Epoch 99" style="max-width: 100%;">
+                    <p><em>Epoch 99</em></p>
+                </div>
+            </div>
+            <p style="text-align: center; font-style: italic; color: #7f8c8d;">
+                Şekil 4: Aynı test görüntüsü için farklı epoch'larda üretilen eskizler - Kalite gelişiminin görsel kanıtı
+            </p>
+
+            <h3>Yöntemin Başarısı ve Sınırlılıkları</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="highlight success">
+                    <h4>Başarılar:</h4>
+                    <ul>
+                        <li>Yüksek kaliteli eskiz üretimi</li>
+                        <li>Yüz özelliklerinin korunması</li>
+                        <li>Sanatsal stil transferi</li>
+                        <li>Kararlı GAN eğitimi</li>
+                        <li>Gerçek zamanlı inference</li>
+                    </ul>
+                </div>
+                <div class="highlight limitation">
+                    <h4>Sınırlılıklar:</h4>
+                    <ul>
+                        <li>Tek stil çıktı</li>
+                        <li>Sınırlı veri seti boyutu</li>
+                        <li>Sadece yüz fotoğrafları</li>
+                        <li>Çözünürlük kısıtı (256x256)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>7. Yenilikçilik / Özgünlük Açıklaması</h2>
+            
+            <h3>Projeye Kattığınız Farklı Bir Bakış Açısı</h3>
+            <ul>
+                <li><strong>Kapsamlı Monitoring Sistemi:</strong> Gerçek zamanlı eğitim takibi ve analiz</li>
+                <li><strong>Otomatik Değerlendirme:</strong> Her 5 epoch'ta test seti değerlendirmesi</li>
+                <li><strong>Detaylı Logging:</strong> Timestamp'li kapsamlı log sistemi</li>
+                <li><strong>Görselleştirme Araçları:</strong> Eğitim sürecinin görsel analizi</li>
+                <li><strong>Modüler Kod Yapısı:</strong> Kolay genişletilebilir ve sürdürülebilir mimari</li>
+            </ul>
+
+            <h3>Mevcut Çözümlerden Farkı</h3>
+            <ul>
+                <li><strong>Basit ve Etkili Yaklaşım:</strong> Çok-stil karmaşıklığı yerine tek-stil mükemmelliği</li>
+                <li><strong>Kapsamlı Analiz Araçları:</strong> Eğitim sürecinin detaylı izlenmesi</li>
+                <li><strong>Pratik Odaklı Tasarım:</strong> Gerçek kullanım senaryolarına uygun</li>
+                <li><strong>Açık Kaynak Yaklaşımı:</strong> Tekrarlanabilir ve geliştirilebilir kod</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>8. Gelecek Çalışmalar</h2>
+            
+            <h3>Projenin Nasıl Geliştirilebileceği</h3>
+            <ul>
+                <li><strong>Çoklu Stil Desteği:</strong> Karakalem, füzen, suluboya gibi farklı stiller</li>
+                <li><strong>Yüksek Çözünürlük:</strong> 512x512 veya 1024x1024 piksel çıktılar</li>
+                <li><strong>Veri Seti Genişletme:</strong> Daha fazla çeşitlilikte yüz fotoğrafları</li>
+                <li><strong>Real-time Web Uygulaması:</strong> Browser tabanlı kullanıcı arayüzü</li>
+            </ul>
+
+            <h3>Eklenebilecek Yeni Özellikler</h3>
+            <ul>
+                <li><strong>Stil Kontrolü:</strong> Kullanıcı tanımlı stil parametreleri</li>
+                <li><strong>Batch Processing:</strong> Çoklu fotoğraf işleme</li>
+                <li><strong>Mobile Uygulama:</strong> Smartphone entegrasyonu</li>
+                <li><strong>Video İşleme:</strong> Video frame'lerinden eskiz üretimi</li>
+                <li><strong>3D Yüz Modelleme:</strong> Derinlik bilgisi kullanımı</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>9. Kaynakça</h2>
+            <ol>
+                <li>Goodfellow, I., et al. (2014). "Generative Adversarial Nets." NIPS.</li>
+                <li>Isola, P., et al. (2017). "Image-to-Image Translation with Conditional Adversarial Networks." CVPR.</li>
+                <li>Zhang, W., et al. (2011). "CUFS: A Database for Face Sketch Synthesis." IEEE.</li>
+                <li>He, K., et al. (2016). "Deep Residual Learning for Image Recognition." CVPR.</li>
+                <li>Mao, X., et al. (2017). "Least Squares Generative Adversarial Networks." ICCV.</li>
+            </ol>
+        </div>
+
+        <div class="footer">
+            <p><strong>Not:</strong> Bu rapor 4 sayfa sınırı içinde hazırlanmış olup, teknik detaylar ve sonuçlar kısa ve öz şekilde sunulmuştur.</p>
+            <p>Proje Raporu - Derin Öğrenme Dersi - 2024</p>
+        </div>
+    </div>
+</body>
+</html>
